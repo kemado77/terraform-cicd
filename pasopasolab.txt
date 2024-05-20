@@ -30,7 +30,7 @@ Instalar jenkins
 1. 
 creo un usuario de aws, le doy permiso de admin
 creo las credenciales y las guardo
-usuario: admin   AKIAU6GDW76Q4NFHB3OZ   KgI8wzqbrGIlIox9aQ/Uzyi1trOm55IW12OW9g1u
+usuario: admin   *****AKIAU6GDW76Q4NFHB3OZ   ******KgI8wzqbrGIlIox9aQ/Uzyi1trOm55IW12OW9g1u
 
 en terminal :  aws configure 
 pego los datos de las credenciales 
