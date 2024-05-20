@@ -1,0 +1,59 @@
+
+
+
+
+Crear cuenta en AWS
+
+Instalar jenkins 
+
+  Crear instanca ec2
+      lanzo la instancia, y actualizo paquetes  sudo apt-get update
+      instalo dependencia java 8 :   sudo apt install openjdk-8-jre-headless
+      instalar jenkins
+                  wget --no-check-certificate -qO - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+                  
+                  echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list 
+                  
+                  sudo apt-get update
+                  curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \ /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+                  
+                    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+                    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+                    /etc/apt/sources.list.d/jenkins.list > /dev/null
+                  
+                  sudo apt-get install jenkins 
+                  
+                  
+                  sudo systemctl start jenkins
+
+------
+1. 
+creo un usuario de aws, le doy permiso de admin
+creo las credenciales y las guardo
+usuario: admin   AKIAU6GDW76Q4NFHB3OZ   KgI8wzqbrGIlIox9aQ/Uzyi1trOm55IW12OW9g1u
+
+en terminal :  aws configure 
+pego los datos de las credenciales 
+
+2.creo el repositorio en github y lo pulleo a mi local
+
+ git config --global user.name "John Ossa"
+ git config --global user.email "johnalexossa@gmail.com"
+
+ git clone https://github.com/kemado77/terraform-cicd.git
+
+
+ 3 .  creo archivos principales de terraform
+    main.tf
+    providers.tf  
+
+    terraform init   // descarga plugins de api de aws, etc 
+    terraform plan // valida que componentes de aws se van a crear
+
+
+
+
+
+
+
+

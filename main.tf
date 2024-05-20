@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~>1.3.0"
+  required_version = "~>1.8.0"
   required_providers {
     aws = {
         source = "hashicorp/aws"
@@ -10,6 +10,5 @@ terraform {
 
 module "ecrRepo" {
   source = "./modules/ecr"
-
   ecr_repo_name = local.ecr_repo_name
 }
