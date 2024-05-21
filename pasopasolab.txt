@@ -50,8 +50,10 @@ pego los datos de las credenciales
     comandos principales de terraform 
 
       terraform init   // descarga plugins de api de aws, etc 
+      terraform validate // para validar la definicion de la infra
       terraform plan // valida que componentes de aws se van a crear
       terraform apply -auto-approve  // subir los cambios a aws
+      terraform destroy -auto-approve // para destriur los recursos aprovisionados
 
     -  creo un folder para modules y adentro otro para el  ecr
             dentro los archivos
