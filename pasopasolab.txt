@@ -96,6 +96,10 @@ pego los datos de las credenciales
 
       - en el locals.tf agrego las variables conrrespondientes al nuevo modulo ecs
 
+      terraform init  // para que adicione el nuevo modulo
+      terraform validate // para validar la definicion de la infra
+
+
     
 
 

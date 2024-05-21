@@ -8,7 +8,7 @@ variable "availability_zones" {
   type        = list(string)
 }
 
-variable "demo_app_task_famliy" {
+variable "demo_web_task_famliy" {
   description = "ECS Task Family"
   type        = string
 }

@@ -1,10 +1,10 @@
 # NOMBRE DEL CLUSTER
 resource "aws_ecs_cluster" "demo_web_cluster"{
-    name = var.web_cluster
+    name = var.demo_web_cluster_name
 }
 
 #VPC A USAR
-resource "aws_default_vpc" "default_vpc{
+resource "aws_default_vpc" "default_vpc"{
 
 }
 
@@ -115,7 +115,7 @@ resource "aws_ecs_service" "demo_web_service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.target_group.arn
-    container_name   = aws_ecs_task_definition.demo_app_task.family
+    container_name   = aws_ecs_task_definition.demo_web_task.family
     container_port   = var.container_port
   }
 

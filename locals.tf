@@ -12,6 +12,6 @@ locals {
   application_load_balancer_name = "cc-demo-web-alb"
   target_group_name              = "cc-demo-alb-tg"
 
-  demo_app_service_name = "cc-demo-web-service"
+  demo_web_service_name = "cc-demo-web-service"
 
 }
