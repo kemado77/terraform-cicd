@@ -90,7 +90,11 @@ pego los datos de las credenciales
                                       balanceador de carga, TARGET GROUP, LISTENER, SERVICIO 
 
 
+               se crea el archivo variables.tf y se adicionan las variables usadas en el modulo
+      
+      - en el main.tf defino el modulo para el servicio ecs y loas variables a usar 
 
+      - en el locals.tf agrego las variables conrrespondientes al nuevo modulo ecs
 
     
 
