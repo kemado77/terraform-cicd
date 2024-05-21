@@ -43,12 +43,25 @@ pego los datos de las credenciales
  git clone https://github.com/kemado77/terraform-cicd.git
 
 
- 3 .  creo archivos principales de terraform
+ 3 .  creo la infra por medio de  terraform
     main.tf
     providers.tf  
+    
+    comandos principales de terraform 
 
-    terraform init   // descarga plugins de api de aws, etc 
-    terraform plan // valida que componentes de aws se van a crear
+      terraform init   // descarga plugins de api de aws, etc 
+      terraform plan // valida que componentes de aws se van a crear
+      terraform apply -auto-approve  // subir los cambios a aws
+
+     creo un folder para modules y adentro otro para el  ecr
+            dentro los archivos
+                ecr.tf   // definicio del container registry
+                outputs.tf  // salidas
+                variables.tf  variables del container registry
+    
+     creo un folder llamado WEB, para la imagen contenerizada de la pagina 
+
+    
 
 
 
