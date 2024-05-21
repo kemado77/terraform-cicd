@@ -53,13 +53,44 @@ pego los datos de las credenciales
       terraform plan // valida que componentes de aws se van a crear
       terraform apply -auto-approve  // subir los cambios a aws
 
-     creo un folder para modules y adentro otro para el  ecr
+    -  creo un folder para modules y adentro otro para el  ecr
             dentro los archivos
                 ecr.tf   // definicio del container registry
                 outputs.tf  // salidas
                 variables.tf  variables del container registry
     
-     creo un folder llamado WEB, para la imagen contenerizada de la pagina 
+     - creo un folder llamado WEB, para la imagen contenerizada de la pagina 
+      
+      - creo el DockerFile para la imagen 
+
+     - entro a la consola al ecr y le doy "view push commands"
+
+
+               y pego uno a uno en la consola y ejecuto
+               
+               1. Retrieve an authentication token and authenticate your Docker client to your registry. Use the AWS CLI:
+
+               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 339712868257.dkr.ecr.us-east-1.amazonaws.com
+
+               2. Cree una imagen de Docker con el siguiente comando. Para obtener información sobre cómo crear un archivo de Docker desde cero, consulte las instrucciones aquí 
+.              Puede omitir este paso si ya se creó la imagen:
+                en la consola voy a la carpeta WEB  y ejecuto:   docker build -t ecr_repositorio .   para crear la imagen
+
+              3. Cree una imagen de Docker con el siguiente comando. Para obtener información sobre cómo crear un archivo de Docker desde cero, consulte las instrucciones aquí 
+.              Puede omitir este paso si ya se creó la imagen:
+
+                docker tag ecr_repositorio:latest 339712868257.dkr.ecr.us-east-1.amazonaws.com/ecr_repositorio:latest
+
+                4. Ejecute el siguiente comando para enviar esta imagen al repositorio de AWS recién creado:
+                docker push 339712868257.dkr.ecr.us-east-1.amazonaws.com/ecr_repositorio:latest
+
+      - VOy a la carpeta modules y creo una carpeta ecs 
+
+             creo el archiv ecs.tf  // aca va la difinicion del cluster, la vpc, las zonas de disponbiilidad, la definicion de las tareas. definicion de politica l rol, 
+                                      balanceador de carga, TARGET GROUP, LISTENER, SERVICIO 
+
+
+
 
     
 
